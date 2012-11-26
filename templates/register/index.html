@@ -1,0 +1,349 @@
+{% extends "register/base.html" %}
+{% block custom_css %}
+<link href='http://fonts.googleapis.com/css?family=Iceland' rel='stylesheet' type='text/css'>
+<style>
+body {
+    background: #eee;
+}
+.navbar-inner {
+    border-bottom: 1px solid #fff !important;
+}
+#zz-top {
+    width: 100%;
+    height: 6px;
+    background: #1B1B1B;
+    display: block;
+}
+.zz-navbar {
+    width: 960px !important;
+    margin: auto !important;
+}
+.zz-top-ul {
+    margin: auto !important;
+    width: 960px !important;
+    height: 6px;
+    list-style-type: disc;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0;
+}
+.zz-list-rainbow {
+    list-style: none !important;
+    height: 6px;
+    width: 102px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    top: -8px;
+}
+li.zz-list-rainbow {
+    
+}
+.zz-container {
+    background: #fff;
+    border-radius: 7px;
+    margin-top: 50px !important;
+    -moz-box-shadow:    inset 0 0 16px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.3);
+    box-shadow:         inset 0 0 16px rgba(0, 0, 0, 0.3);
+    padding: 10px 10px 10px 10px;
+    padding-left: 20px;
+    width: 930px;
+    border: 1px solid #aaa;
+}
+.brand {
+    font-family: 'Iceland', cursive !important;
+    font-weight: bold;
+    font-size: 34px !important;
+    margin-top: -2px !important;
+}
+#forms_container {
+    padding-top: 40px;
+    width: 740px;
+    position: relative;
+    margin: auto;
+}
+input {
+    height: 35px !important;
+    font-size: 22px !important;
+    text-indent: 20px;
+    line-height: 30px !important;
+}
+label {
+    font-size: 24px !important;
+    line-height: 36px;
+    color: #777;
+}
+.zz-btn {
+    height: 40px !important;
+    min-width: 100px !important;
+    position: relative; 
+    right: 90px;
+    font-size: 22px;
+}
+.control-label {
+    margin-left: -26px !important;
+    width: 190px !important;
+}
+input[type="checkbox"] {
+    height: 23px !important;
+    width: 23px !important;
+}
+label.checkbox {
+    line-height: 32px !important;
+}
+.zz-textarea {
+    max-width: 456px !important;
+    max-height: 300px !important;
+}
+.zz-brand {
+    background-color: transparent;
+    position: relative;
+    left: 30px;
+    top: 2px;
+    color: #000;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    text-shadow: rgba(255, 255, 255, 0.0980392) 0px 1.5px 0px, rgba(255, 255, 255, 0.121569) 0px 0px 30px;
+}
+.zz-brand:hover {
+    color: #eee;
+    text-shadow: 0px 1px 0px #ddd;
+}
+</style>
+{% endblock %}
+
+{% block page %}
+<div id="zz-top">
+<ul class="zz-top-ul">
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+</ul>
+</div>
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <div class="container zz-navbar">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#" rel="popover" data-placement="bottom" 
+                                                    data-original-title="The goal of the proposed CS4HS project is to organize a workshop for increasing the quality and awareness of new technology’s and trends in the pre-universitary educational system.">Computer Science 4 High Schools <span class="zz-brand">@&nbsp;&nbsp;&nbsp;UVT</span></a>
+            <div class="nav-collapse collapse pull-right">
+                <ul class="nav">
+                    <li></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+<div class="container zz-container">
+
+<div id="forms_container">
+    <form class="form-horizontal" id="zz-form">
+    <div class="control-group">
+    <label class="control-label" for="inputNume">Nume</label>
+    <div class="controls">
+        <input type="text" name="nume" class="span5" id="inputNume" placeholder="Nume">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputPrenume">Prenume</label>
+    <div class="controls">
+        <input type="text" name="prenume" class="span5" id="inputPrenume" placeholder="Prenume">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputEmail">Email</label>
+    <div class="controls">
+        <input type="text" name="email" class="span5" id="inputEmail" placeholder="Email">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputJudet">Judet</label>
+    <div class="controls">
+        <input type="text" name="judet" class="span5" id="inputJudet" placeholder="Judet">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputLocalitatea">Localitatea</label>
+    <div class="controls">
+        <input type="text" name="localitate" class="span5" id="inputLocalitatea" placeholder="Localitatea">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputInstitutie">Institutie</label>
+    <div class="controls">
+        <input type="text" name="institutie" class="span5" id="inputInstitutie" placeholder="Institutie">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputMateriaPredata">Materia Predata</label>
+    <div class="controls">
+        <label class="checkbox">
+            <input type="checkbox" name="tic" value="True">
+            &nbsp;TIC
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="informatica" value="True">
+            &nbsp;Informatica
+        </label>
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputMateriaPredata">Particip la</label>
+    <div class="controls">
+        <label class="checkbox">
+            <input type="checkbox" name="prezentari" value="True">
+            &nbsp;Prezentari
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="workshop" value="True">
+            &nbsp;Workshop-uri
+        </label>
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputInstitutie">Motivul Participarii</label>
+    <div class="controls">
+        <textarea rows="4" name="motiv" class="span5 zz-textarea"></textarea>
+    </div>
+    </div>
+
+    <div class="control-group">
+    <div class="controls">
+        <button class="btn btn-primary pull-right zz-btn" data-loading-text="Loading..."> Submit </button>
+    </div>
+    </div>
+    </form>
+</div>
+
+
+
+</div> <!-- /container -->
+
+<div class="modal hide fade">
+  <div class="modal-header">
+    <p class="close close-modal" aria-hidden="">&times;</p>
+    <h3>Form submision</h3>
+  </div>
+  <div class="modal-body">
+    <p class="zz-modal-information">
+        <span class="hide success">
+            <b>Inregistrare cu success!</b>
+                </br>
+                </br>Un email a fost trimis catre 
+            <b>
+            <span class="zz-modal-email"></span>
+            </b> cu pasii necesari pentru a confirma inregistrarea.
+        </span>
+        <span class="hide fail">
+            <b>Inregistrare fara success!</b>
+            </br>
+            </br>Va rugam incercatii din nou, daca problema persista va rugam contactatii <b>support@info.uvt.ro</b>
+        </span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary close-modal">Finish</a>
+  </div>
+</div>
+{% endblock %}    
+
+{% block custom_js %}
+<script type="application/javascript">
+
+(function( $ ){
+    $.fn.serializeJSON=function() {
+        var json = {};
+        jQuery.map($(this).serializeArray(), function(n, i){
+            json[n['name']] = n['value'];
+        });
+        return json;
+    };
+})( jQuery );
+
+
+
+$(document).ready(function() {
+    function changeColour(e){
+    // random values between 0 and 255, these are the 3 colour values
+    var r = Math.floor(Math.random()*256);
+    var g = Math.floor(Math.random()*256);
+    var b = Math.floor(Math.random()*256);
+    // change the text colour of this element
+    e.hide().css("backgroundColor", getHex(r,g,b)).fadeIn("fast");
+}
+
+ // intToHex()
+ function intToHex(n){
+    n = n.toString(16);
+    // eg: #0099ff. without this check, it would output #099ff
+    if( n.length < 2) 
+        n = "0"+n; 
+    return n;
+ }
+ 
+ // getHex()
+ // shorter code for outputing the whole hex value
+ function getHex(r, g, b){
+    return '#'+intToHex(r)+intToHex(g)+intToHex(b); 
+ }
+
+// parse dom and get all zz-list-rainbow list elements and change bg to random colors.
+$('.zz-list-rainbow').each(function(index, value) {
+    changeColour($(value));
+});
+setInterval(function() {
+    changeColour($($('.zz-list-rainbow')[parseInt(Math.random()*9)]));
+    console.log();
+}, 2000);
+
+$(".brand").tooltip();
+$(".zz-about").tooltip();
+});
+
+$('button').click(function(e) {
+    var ser_form = $("#zz-form").serializeJSON();
+    $(".span5:input, input").attr("disabled", true);
+    $(this).text("Submiting...").addClass("disabled");
+    $.post("submit/", ser_form, function(data) {
+        data = $.parseJSON(data);
+        if(data['success']) {
+            setTimeout(function() {
+                //$(".span5:input, input").attr("disabled", false);
+                //$('button').text("Submit").removeClass("disabled");
+                $(".modal").modal('show');
+                $('.zz-modal-email').html(ser_form['email']);
+                $(".zz-modal-information .success").show();
+                $('button').text("Submited").attr('disabled', true);
+            }, 1500);
+        }
+        else {
+            $(".modal").modal('show');
+            $(".zz-modal-information .fail").show();
+        }
+    })
+    e.preventDefault();
+
+});
+
+$(".close-modal").click(function() {
+    $(".modal").modal("hide");
+});
+
+
+</script>
+{% endblock %}

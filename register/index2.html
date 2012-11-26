@@ -1,0 +1,142 @@
+{% extends "register/base.html" %}
+{% block custom_css %}
+<style>
+@font-face
+{
+font-family: myFirstFont;
+src: url('/static/css/Sansation_Light.ttf'),
+     url('/static/Sansation_Light.eot'); /* IE9+ */
+}
+
+body {
+    background: #1f1f1f;
+}
+#zz-top {
+    width: 100%;
+    height: 6px;
+    background: #1B1B1B;
+    display: block;
+}
+.zz-navbar {
+    width: 960px !important;
+    margin: auto !important;
+}
+.zz-top-ul {
+    margin: auto !important;
+    width: 960px !important;
+    height: 6px;
+    list-style-type: disc;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0;
+}
+.zz-list-rainbow {
+    list-style: none !important;
+
+    height: 6px;
+    width: 102px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    top: -8px;
+}
+.zz-container {
+    background: #ddd;
+    border-radius: 10px;
+    margin-top: 50px !important;
+    min-height: 400px;
+    -moz-box-shadow:    inset 0 0 20px #111;
+    -webkit-box-shadow: inset 0 0 20px #111;
+    box-shadow:         inset 0 0 20px #111;
+    padding: 10px 10px 10px 10px;
+    padding-left: 20px;
+    width: 930px;
+}
+</style>
+{% endblock %}
+{% block page %}
+<div id="zz-top">
+<ul class="zz-top-ul">
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+    <li class="zz-list-rainbow"></li>
+</ul>
+</div>
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <div class="container zz-navbar">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">Google for HighSchools</a>
+            <div class="nav-collapse collapse pull-right">
+                <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+<div class="container zz-container">
+
+<h1>Bootstrap starter template</h1>
+<p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+
+</div> <!-- /container -->
+{% endblock %}    
+
+{% block custom_js %}
+<script type="application/javascript">
+
+$(document).ready(function() {
+
+function changeColour(e){
+    // random values between 0 and 255, these are the 3 colour values
+    var r = Math.floor(Math.random()*256);
+    var g = Math.floor(Math.random()*256);
+    var b = Math.floor(Math.random()*256);
+    // change the text colour of this element
+    e.hide().css("backgroundColor", getHex(r,g,b)).fadeIn("fast");
+}
+
+ // intToHex()
+ function intToHex(n){
+    n = n.toString(16);
+    // eg: #0099ff. without this check, it would output #099ff
+    if( n.length < 2) 
+        n = "0"+n; 
+    return n;
+ }
+ 
+ // getHex()
+ // shorter code for outputing the whole hex value
+ function getHex(r, g, b){
+    return '#'+intToHex(r)+intToHex(g)+intToHex(b); 
+ }
+
+// parse dom and get all zz-list-rainbow list elements and change bg to random colors.
+$('.zz-list-rainbow').each(function(index, value) {
+    changeColour($(value));
+});
+setInterval(function() {
+    changeColour($('.zz-list-rainbow')[Math.random()*9]);
+    console.log($('.zz-list-rainbow')[Math.random()*9]);
+}, 1000);
+
+});
+
+</script>
+{% endblock %}
